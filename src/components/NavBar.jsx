@@ -16,7 +16,8 @@ const Navbar = () =>{
     dispatch(removeUser());
     return navigate("/login");
   }
-    return(
+  if(!user) return;
+    return (
         <div className="navbar  bg-blue-400 bg-base-100 shadow-sm">
         <div className="flex-1">
           <Link to = "/" className="btn btn-ghost text-xl">🧑‍💻 devTinder</Link>
@@ -28,7 +29,7 @@ const Navbar = () =>{
               <div className="w-10 rounded-full">
               
                 <img
-                  alt="Tailwind CSS Navbar component"
+                  alt="user"
                   src={user.photourl} />
               </div>
             </div>
